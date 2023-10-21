@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 tasklist.md
-node_modules
+node_modules/

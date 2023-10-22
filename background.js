@@ -10,13 +10,12 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.keywordList) {
     //   console.log(message.keywordList);
       sendResponse('Received message!');
+        const data = {
+            keywords: message.keywordList
+            // input: stringToList(message1.keywordInput)
+        };
+        console.log(data);
     }
-    const data = {
-        keywords: message.keywordList
-        // input: stringToList(keywordInput.value)
-    };
-    console.log(data);
-
 });
 
 

@@ -6,8 +6,3 @@ const keywordInput = document.getElementById('keyword-input');
 
 // render exntension header with hello world
 extensionHeader.innerHTML = 'Focii';
-
-
-level1Btn.addEventListener('click', () => {
-    console.log(keywordInput.value);
-});

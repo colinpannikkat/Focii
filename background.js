@@ -7,9 +7,17 @@ function stringToList(inputString) {
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.keywordList) {
+    if (message.keywordInput) {
     //   console.log(message.keywordList);
-      sendResponse('Received message!');
+        sendResponse('Received message!');
+        const data = {
+            keywords: message.keywordInput
+            // input: stringToList(message1.keywordInput)
+        };
+        console.log(data);
+    } else if (message.keywordList) {
+        //   console.log(message.keywordList);
+        sendResponse('Received message!');
         const data = {
             keywords: message.keywordList
             // input: stringToList(message1.keywordInput)
@@ -17,13 +25,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         console.log(data);
     }
 });
-
-chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-    // Handle the received message
-    console.log(message.data); // This will contain the data sent from popup.js
-    // You can also send a response back to the popup if needed.
-    sendResponse({ response: "Message received in the background script" });
-  });
   
 
 

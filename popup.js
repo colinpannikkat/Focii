@@ -4,9 +4,11 @@ const level2Btn = document.getElementById('level-2-btn');
 const level3Btn = document.getElementById('level-3-btn');
 const keywordInput = document.getElementById('keyword-input');
 
+level1Btn.addEventListener('click', () => {
+    chrome.runtime.sendMessage({ keywordInput: keywordInput.value });
+});
+
 // render exntension header with hello world
 extensionHeader.innerHTML = 'Focii';
-
-chrome.runtime.sendMessage({ data: "Test" });
 
 

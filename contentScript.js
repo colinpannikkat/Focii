@@ -131,7 +131,9 @@ function getKeywords(text, n) {
 
     var topWords = [];
     for (var i = 0; i < (n); i++) {
-        topWords.push(wordList[i][0]);
+        if(wordList[i][0].length > 2){
+            topWords.push(wordList[i][0]);
+        }
     }
     // console.log(topWords);
     return topWords
@@ -139,12 +141,15 @@ function getKeywords(text, n) {
 
 const pageSource = document.documentElement.innerText;
 const keywordList = getKeywords(pageSource, 20);
+const keywordWebsite = getKeywords(pageSource, 20);
 // const keywordInput = document.getElementById('keyword-input');
 // const keywordInputList = stringToList(keywordInput.value);
 
 // alert(keywordList);
 
-chrome.runtime.sendMessage({ keywordList: keywordList });
+chrome.runtime.sendMessage({ keywordWebsite: keywordWebsite } , (response) => {
+    // alert("sent keywordWebsite to background.js");
+});
 
 
 

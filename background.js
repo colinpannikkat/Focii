@@ -6,40 +6,43 @@ function stringToList(inputString) {
     return items;
 }
 
+const data = {
+    keywordInput: [],
+    keywordWebsite: []
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.keywordInput) {
-    //   console.log(message.keywordList);
-        sendResponse('Received message!');
-        const data = {
-            keywords: message.keywordInput
-            // input: stringToList(message1.keywordInput)
-        };
-        console.log(data);
-    } else if (message.keywordList) {
-        //   console.log(message.keywordList);
-        sendResponse('Received message!');
-        const data = {
-            keywords: message.keywordList
-            // input: stringToList(message1.keywordInput)
-        };
-        console.log(data);
+        data.keywordInput = stringToList(message.keywordInput);
+    } else if (message.keywordWebsite) {
+        data.keywordWebsite = message.keywordWebsite;
+    }
+    console.log(data);
+
+    const url = 'http://192.3.249.51/verifyWebsite';
+    if(data.keywordInput && data.keywordWebsite) {
+        //send data to server
+        var requestOptions = {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+          };
+          fetch(url, requestOptions)
+          .then(response => {
+            if (response.ok) {
+              return response.json(); // or response.text() if the server sends plain text
+            } else {
+              throw new Error('Network response was not ok');
+            }
+          })
+          .then(data => {
+            // Handle the response data here
+            console.log(data);
+          })
+          .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+          });
     }
 });
-  
-
-
-// const url = 'http://192.3.249.51/verifyWebsite';
-
-// fetch(url, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//     },
-//     body: JSON.stringify(data),
-//   }).then(response => response.json())
-//     .then(responseData => {
-//       console.log('Response:', responseData);
-//     })
-//     .catch(error => {
-//       console.error('Error:', error);
-//     });

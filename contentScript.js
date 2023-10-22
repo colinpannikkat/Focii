@@ -138,7 +138,7 @@ function getKeywords(text, n) {
 }
 
 const pageSource = document.documentElement.innerText;
-const keywordList = getKeywords(pageSource, 5);
+const keywordList = getKeywords(pageSource, 10);
 // const keywordInput = document.getElementById('keyword-input');
 // const keywordInputList = stringToList(keywordInput.value);
 

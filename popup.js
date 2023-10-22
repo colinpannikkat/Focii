@@ -6,3 +6,7 @@ const keywordInput = document.getElementById('keyword-input');
 
 // render exntension header with hello world
 extensionHeader.innerHTML = 'Focii';
+
+chrome.runtime.sendMessage({ data: "Test" });
+
+

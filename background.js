@@ -18,6 +18,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
 });
 
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    // Handle the received message
+    console.log(message.data); // This will contain the data sent from popup.js
+    // You can also send a response back to the popup if needed.
+    sendResponse({ response: "Message received in the background script" });
+  });
+  
+
 
 // const url = 'http://192.3.249.51/verifyWebsite';
 

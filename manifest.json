@@ -4,7 +4,8 @@
     "version": "1.0.0",
     "description": "Procrastination blocker",
     "permissions": [
-      "activeTab"
+      "activeTab",
+      "storage"
     ],
     "background": {
       "service_worker": "background.js"
@@ -16,6 +17,9 @@
         "js": ["contentScript.js"]
       }
     ],
+    "externally_connectable": {
+      "matches": ["<all_urls>"]
+    },
     "action": {
       "default_popup": "popup.html",
       "default_icon": "icons/focii_logo.png"

@@ -138,15 +138,13 @@ function getKeywords(text, n) {
 }
 
 const pageSource = document.documentElement.innerText;
-const keywordList = getKeywords(pageSource, 10);
+const keywordList = getKeywords(pageSource, 20);
 // const keywordInput = document.getElementById('keyword-input');
 // const keywordInputList = stringToList(keywordInput.value);
 
 // alert(keywordList);
 
-chrome.runtime.sendMessage({keywordList: keywordList}, (response) => {
-    alert(response);
-});
+chrome.runtime.sendMessage({ keywordList: keywordList });
 
 
 

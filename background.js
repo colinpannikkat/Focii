@@ -23,8 +23,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
     // console.log(data);
 
-    // const url = 'http://192.3.249.51/verifyWebsite';
-    const url = "http://10.20.7.21/verifyWebsite";
+    const url = 'http://192.3.249.51/verifyWebsite';
+    // const url = "http://10.20.7.21/verifyWebsite";
 
     if(data.keywordInput.length>0 && data.keywordWebsite.length>0 && isActive) {
         //send data to server

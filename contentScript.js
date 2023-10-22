@@ -131,14 +131,16 @@ function getKeywords(text, n) {
 
     var topWords = [];
     for (var i = 0; i < (n); i++) {
-        topWords.push(wordList[i][0]);
+        if(wordList[i][0].length > 2){
+            topWords.push(wordList[i][0]);
+        }
     }
     // console.log(topWords);
     return topWords
 }
 
 const pageSource = document.documentElement.innerText;
-const keywordWebsite = getKeywords(pageSource, 10);
+const keywordWebsite = getKeywords(pageSource, 20);
 // const keywordInput = document.getElementById('keyword-input');
 // const keywordInputList = stringToList(keywordInput.value);
 

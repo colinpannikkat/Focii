@@ -11,19 +11,24 @@ const data = {
     keywordWebsite: []
 }
 
+var isActive = 1;
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.keywordInput) {
         data.keywordInput = stringToList(message.keywordInput);
     } else if (message.keywordWebsite) {
         data.keywordWebsite = message.keywordWebsite;
+    } else if (message.isActive == 0 || message.isActive == 1) {
+        isActive = message.isActive;
     }
-    console.log(data);
+    // console.log(data);
 
     const url = 'http://192.3.249.51/verifyWebsite';
     // const url = "http://10.20.7.21/verifyWebsite";
 
-    if(data.keywordInput && data.keywordWebsite) {
+    if(data.keywordInput.length>0 && data.keywordWebsite.length>0 && isActive) {
         //send data to server
+        console.log(data);
         var requestOptions = {
             method: "POST",
             headers: {

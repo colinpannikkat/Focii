@@ -146,6 +146,12 @@ const keywordWebsite = getKeywords(pageSource, 20);
 
 // alert(keywordList);
 
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//     if(!message.isSimilar){
+//         console.log("The website you are on is not similar to the keywords you have inputted. Please try again.");
+//     }
+// });
+
 chrome.runtime.sendMessage({ keywordWebsite: keywordWebsite } , (response) => {
     // alert("sent keywordWebsite to background.js");
 });

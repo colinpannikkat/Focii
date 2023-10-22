@@ -23,8 +23,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     }
     // console.log(data);
 
-    const url = 'http://192.3.249.51/verifyWebsite';
-    // const url = "http://10.20.7.21/verifyWebsite";
+    // const url = 'http://192.3.249.51/verifyWebsite';
+    const url = "http://10.20.7.21/verifyWebsite";
 
     if(data.keywordInput.length>0 && data.keywordWebsite.length>0 && isActive) {
         //send data to server
@@ -47,6 +47,17 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           .then(data => {
             // Handle the response data here
             console.log(data);
+            //go to the active tab and delete the html of the page if data is 0
+            if(data == 0){
+                chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+                    chrome.scripting.executeScript({
+                        target: {tabId: tabs[0].id},
+                        function: () => {
+                            document.documentElement.innerHTML = "";
+                        }
+                    });
+                });
+            }
           })
           .catch(error => {
             console.error('There was a problem with the fetch operation:', error);

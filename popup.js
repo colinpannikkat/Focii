@@ -8,6 +8,7 @@ var isActive = 1;
 pauseBtn.addEventListener('click', () => {
     // alert("pause");
     isActive = !isActive;
+    pauseBtn.src = isActive ? "icons/pause-btn.png" : "icons/play-btn.png";
     // alert(isActive);
     chrome.runtime.sendMessage({isActive: isActive});
 });

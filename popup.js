@@ -5,7 +5,9 @@ const level3Btn = document.getElementById('level-3-btn');
 const keywordInput = document.getElementById('keyword-input');
 
 level1Btn.addEventListener('click', () => {
-    chrome.runtime.sendMessage({ keywordInput: keywordInput.value });
+    chrome.runtime.sendMessage({ keywordInput: keywordInput.value } , (response) => {
+        // console.log("sent keywordInput to background.js");
+    });
 });
 
 // render exntension header with hello world

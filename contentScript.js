@@ -138,14 +138,14 @@ function getKeywords(text, n) {
 }
 
 const pageSource = document.documentElement.innerText;
-const keywordList = getKeywords(pageSource, 10);
+const keywordWebsite = getKeywords(pageSource, 10);
 // const keywordInput = document.getElementById('keyword-input');
 // const keywordInputList = stringToList(keywordInput.value);
 
 // alert(keywordList);
 
-chrome.runtime.sendMessage({keywordList: keywordList}, (response) => {
-    alert(response);
+chrome.runtime.sendMessage({ keywordWebsite: keywordWebsite } , (response) => {
+    // alert("sent keywordWebsite to background.js");
 });
 
 

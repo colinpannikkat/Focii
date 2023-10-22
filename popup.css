@@ -17,7 +17,7 @@
 
 .extension-header{
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .main-btn-container img{
@@ -48,3 +48,30 @@
     resize: none;
 }
 
+.threshold-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.threshold-container button{
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #000; /* Black border */
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.threshold-container button:hover{
+    background-color: #000; /* White background on hover */
+    color: #fff; /* Black text color on hover */
+    transition: background-color 0.3s, color 0.3s;
+}

@@ -8,6 +8,9 @@ var isActive = 1;
 chrome.storage.session.get(['pauseBtn'], function(result) {
     const iconPath = result.pauseBtn || "icons/pause-btn.png";
     pauseBtn.src = iconPath;
+});
+
+chrome.storage.session.get(['keywordInput'], function(result) {
     keywordInput.value = result.keywordInput || "";
 });
 

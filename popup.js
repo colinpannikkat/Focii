@@ -5,6 +5,12 @@ const pauseBtn = document.getElementById('pause-btn');
 
 var isActive = 1;
 
+chrome.storage.session.get(['pauseBtn'], function(result) {
+    const iconPath = result.pauseBtn || "icons/pause-btn.png";
+    pauseBtn.src = iconPath;
+    keywordInput.value = result.keywordInput || "";
+});
+
 pauseBtn.addEventListener('click', () => {
     // alert("pause");
     isActive = !isActive;
@@ -20,8 +26,7 @@ pauseBtn.addEventListener('click', () => {
     // pauseBtn.src = isActive ? "icons/pause-btn.png" : "icons/play-btn.png";
     // alert(isActive);
     chrome.runtime.sendMessage({isActive: isActive});
-    
-
+    chrome.storage.session.set({pauseBtn: pauseBtn.src});
 });
 
 focusBtn.addEventListener('click', () => {
@@ -30,4 +35,5 @@ focusBtn.addEventListener('click', () => {
     });
     keywordInput.style.borderColor = "green";
     keywordInput.style.borderWidth = "4px";
+    chrome.storage.session.set({keywordInput: keywordInput.value});
 });

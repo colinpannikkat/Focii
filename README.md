@@ -1,68 +1,19 @@
 # Focii
 Anti-Procrastination Chrome Extension
 
-# Tasks
+## Files
+### manifest.json
+* Contains all the permissions, paths to backgrounds scripts, icons, for the extension
+* Permission includes - activeTab, scripting, storage
 
-## Friday
+### popup.js / .html / .css
+* Contains all the logic, html, styling for the extension
+* Responsible for retrieving user keywords and sending it to background.js
 
-### Goals (5 hrs)
+### background.js
+* Contains the JS code that runs at the browser level which has the universal scope
+* Responsible for calling and receiving data from apis
 
-- [ ] Extension setup
-  - [ ] Printed hello world
-  - [ ] Printed pomodoro timer
-- [ ] Backend setup
-  - [ ] Keyword similarity
-  - [ ] Pomodoro timer
-  - [ ] Profiles (json)
-  - [ ] Study planner
-    - [ ] ICS --> planner --> studyplan.ics
-- [ ] Frontend setup 
-  - [ ] UX/Logo Design
-  - [ ] Settings page
-  - [ ] Main page w/ big button
-  - [ ] Pomodoro timer section
-
-### Colin
-
-- [ ] Keyword similarity given website
-  - [ ] Get sourcecode
-  - [ ] Use summary.js to get summary/keywords
-  - [ ] GLOVE.js to convert to token embeddings and compare similarity to whitelist keywords
-  - [ ] Determine whether website should be allowed based on some epsilon
-
-### Ajay and Sarvesh
-
-- [ ] Setting up extension environment
-  - [ ] Scrape sourcecode from website when entered/loaded by user
-  - [ ] Settings and keywords
-  - [ ] JSON file input/out and parsing
-  - [ ] Pomodoro timer display
-
-### David
-
-- [ ] Frontend design
-  - [ ] HTML and CSS (making it pretty)
-- [ ] With COLIN: Study planner
-  - [ ] Convert existing script to JS
-  - [ ] Parse outlook ICS to JSON
-  - [ ] Write script given user input to determine study plan and output as ICS
-
-## Saturday
-
-## Goals
-
-### Colin
-
-### Ajay
-
-### Sarvesh
-
-### David
-
-## Sunday
-
-## Goals
-- [ ] Documentation
-- [ ] Presentation
-- [ ] Video
-- [ ] Submission
+### contentScript.js
+* Contains script that runs within the scope for the active web page everytime the url is refreshed
+* Responsible for retreiving page source and sending it to background.js

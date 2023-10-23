@@ -8,7 +8,7 @@ Anti-Procrastination Chrome Extension
 * Go to chrome and enable developer mode
 * Click on 'load unpacked extension' and select the repo
 * Grant necessary permission and the extension should show up in the extension
-* Enjoy being not distracted
+* Enjoy not being distracted and stay Focii
 
 ## Files
 ### manifest.json

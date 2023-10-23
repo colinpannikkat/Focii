@@ -54,6 +54,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                         target: {tabId: tabs[0].id},
                         function: () => {
                             document.documentElement.innerHTML = "";
+                            document.documentElement.innerText = "This website is not similar to the keywords you have inputted. Please try again.";
                         }
                     });
                 });

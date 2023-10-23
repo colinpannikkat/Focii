@@ -55,9 +55,11 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                         function: () => {
                             document.documentElement.innerHTML = "";
                             document.documentElement.innerHTML = `<body style="text-align: center; background-color: #f5f5f5; font-family: Arial, sans-serif;">
-                            <div style="margin: 100px auto; padding: 20px; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; max-width: 400px;">
-                                <h1 style="color: #d9534f;">Website Blocked</h1>
-                                <p>This website has been blocked by your network administrator.</p>
+                            <div style="margin: 100px auto; padding: 20px; background-color: #fff; border: 1px solid #ccc; border-radius: 5px; max-width: 600px;">
+                                <h1 style="color: #d9534f;">Oops, You've Hit a Roadblock!</h1>
+                                <p>This website doesn't align with your current mission. It's time to refocus and conquer your goals.</p>
+                                <br>
+                                <strong>Focii Extension</strong>
                             </div>
                         </body>`;
                         }

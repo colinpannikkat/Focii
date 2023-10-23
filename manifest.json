@@ -25,6 +25,6 @@
     },
     "action": {
       "default_popup": "popup.html",
-      "default_icon": "icons/focii_logo.png"
+      "default_icon": "icons/focii_logo128.png"
     }
   }

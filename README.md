@@ -1,6 +1,15 @@
 # Focii
 Anti-Procrastination Chrome Extension
 
+[Backend](https://github.com/Sarvesh-Thiruppathi/Focii_Backend)
+
+## How to load
+* Clone or download this repo
+* Go to chrome and enable developer mode
+* Click on 'load unpacked extension' and select the repo
+* Grant necessary permission and the extension should show up in the extension
+* Enjoy being not distracted
+
 ## Files
 ### manifest.json
 * Contains all the permissions, paths to backgrounds scripts, icons, for the extension

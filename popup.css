@@ -2,13 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace
 }
 
-.html{
-    border-radius: 10px;
-}
 .popup-container{
-    width: 360px;
+    width: 300px;
     height: 360px;
     display: flex;
     flex-direction: column;
@@ -44,7 +44,7 @@
     height: 80px;
     display: block;
     margin: 15px auto;
-    border: 1px solid #ccc;
+    border: 1px solid #fff;
     border-radius: 5px;
     padding: 0.5rem;
     font-size: 1rem;
@@ -62,9 +62,9 @@
 .threshold-container button{
     display: inline-block;
     padding: 10px 20px;
-    border: 2px solid #000; /* Black border */
-    background-color: #fff; /* White background */
-    color: #000; /* Black text */
+    border: 2px solid #fff; /* Black border */
+    background-color: #000; /* White background */
+    color: #fff; /* Black text */
     text-decoration: none;
     text-align: center;
     font-size: 16px;
@@ -74,7 +74,7 @@
 }
 
 .threshold-container button:hover{
-    background-color: #000; /* White background on hover */
-    color: #fff; /* Black text color on hover */
+    background-color: #fff; /* White background on hover */
+    color: #000; /* Black text color on hover */
     transition: background-color 0.3s, color 0.3s;
 }

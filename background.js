@@ -138,7 +138,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
                         target: {tabId: tabs[0].id},
                         function: () => {
                             document.documentElement.innerHTML = "";
-                            document.documentElement.innerHTML = "<h1>Website Blocked</h1>";
+                            document.documentElement = blockedHtml;
                         }
                     });
                 });
